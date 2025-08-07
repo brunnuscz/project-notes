@@ -1,0 +1,17 @@
+.title-principal{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+.bg-custom {
+    background: #25576b;
+    /* background: linear-gradient(90deg,rgb(37, 64, 75) 0%, rgb(9, 122, 56) 50%, rgb(150, 137, 24) 100%); */
+}
+.table-custom{
+  border-collapse: separate !important;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
