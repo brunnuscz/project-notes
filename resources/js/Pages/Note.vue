@@ -33,7 +33,7 @@
     </thead>
     <tbody>
       <tr v-for="note in notes.data" :key="note.id">
-        <td class="text-center">{{ note.id }}</td>
+        <td class="text-center">{{ String(note.id).padStart(4, '0') }}</td>
         <td class="text-center">{{ note.title }}</td>
         <td>{{ note.description }}</td>
         <td class="text-center">{{ dayjs(note.created_at).format('DD/MM/YYYY HH:mm:ss') }}</td>
