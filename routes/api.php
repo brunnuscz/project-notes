@@ -3,7 +3,6 @@
 use App\Http\Api\NoteApiController;
 use Illuminate\Support\Facades\Route;
 
-
 Route::prefix('notes')->name('notes.')->group(function () {
     Route::get('/', [NoteApiController::class, 'index'])->name('index');
     Route::post('/', [NoteApiController::class, 'store'])->name('store');

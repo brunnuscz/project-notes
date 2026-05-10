@@ -7,7 +7,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class NoteResource extends JsonResource
 {
-
     // formato (transformação / serialização) uma camada de apresentação de dados. o ideal é retornar o dado bruto
     public function toArray(Request $request): array
     {

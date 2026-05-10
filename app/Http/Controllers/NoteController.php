@@ -13,7 +13,7 @@ class NoteController extends Controller
         $notes = NoteActions::run();
 
         return Inertia::render('Note', [
-            'notes' => NoteResource::collection($notes)
+            'notes' => NoteResource::collection($notes),
         ]);
     }
 }

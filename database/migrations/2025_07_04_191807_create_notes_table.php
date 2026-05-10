@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('app.notes', function (Blueprint $table) {
-            $table->id(); 
+            $table->id();
             $table->string('title', 40)->nullable();
             $table->text('description', 300)->nullable();
             $table->timestamps();

@@ -8,12 +8,12 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Note extends Model
 {
-    use HasFactory, HasApiTokens;
+    use HasApiTokens, HasFactory;
 
     protected $table = 'app.notes';
 
     protected $fillable = [
         'title',
-        'description'
+        'description',
     ];
 }
