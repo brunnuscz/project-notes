@@ -12,11 +12,13 @@ class NoteApiController extends Controller
 {
     public function index()
     {
-        $per_page = request()->get('per_page');
-        $query = Note::query()->orderBy('id', 'ASC');
-        $paginated = $query->paginate($per_page);
-    
-        if (request()->has('only_data')) {
+        $per_page     = request()->get('per_page');
+        $order        = request()->get('order', 'ASC');
+        $column_order = request()->get('column_order', 'id');
+        $query        = Note::query()->orderBy($column_order, $order);
+        $paginated    = $query->paginate($per_page);
+
+        if (request()->boolean('only_data')) {
             return response()->json([
                 'data' => NoteResource::collection($paginated->items())
             ]);
