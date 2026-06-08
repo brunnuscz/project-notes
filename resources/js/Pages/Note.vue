@@ -10,30 +10,37 @@
 </script>
 
 <template>
-  <h1 class="title-principal">Anotações</h1>
-  
-  <v-btn color="primary" class="mb-4">
-    Adicionar
-  </v-btn>
-  
   <v-table 
-    height="550px"
+    height="580px"
     fixed-header
-    class="rounded-t-xl pr-5"
+    class="rounded-t-xl rounded-b-xl pr-3"
     v-if="notes.data && notes.data.length"
   >
     <thead>
       <tr>
-        <th class="text-center">Código</th>
+        <th class="text-center">Cód. Grupo</th>
+        <th class="text-center">Grupo</th>
+        <th class="text-center">Número</th>
         <th class="text-center">Título</th>
         <th class="text-center">Descrição</th>
-        <th class="text-center">Criação</th>
-        <th class="text-center">Atualização</th>
+        <th class="text-center" style="width: 100px;">Criação</th>
+        <th class="text-center" style="width: 100px;">Atualização</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="note in notes.data" :key="note.id">
-        <td class="text-center">{{ String(note.id).padStart(4, '0') }}</td>
+        <td class="text-center">{{ note.group.id ? String(note.group.id).padStart(2, '0') : '' }}</td>
+        <td class="text-center">
+          <v-chip 
+            v-if="note.group.id"
+            :color="note.group.color ? note.group.color : 'default'" 
+            :variant="note.group.color ? 'flat' : 'outlined'"
+            size="small"
+          >
+            {{ note.group.title_group }}
+          </v-chip>
+        </td>
+        <td class="text-center">{{ String(note.id).padStart(3, '0') }}</td>
         <td class="text-center">{{ note.title }}</td>
         <td>{{ note.description }}</td>
         <td class="text-center">{{ dayjs(note.created_at).format('DD/MM/YYYY HH:mm:ss') }}</td>

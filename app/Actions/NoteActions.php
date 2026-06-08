@@ -15,6 +15,7 @@ class NoteActions
     {
         return NoteResource::collection(
             Note::query()
+                ->with(['group'])
                 ->orderBy('id', 'ASC')
                 ->paginate(request()->get('per_page'))
         );

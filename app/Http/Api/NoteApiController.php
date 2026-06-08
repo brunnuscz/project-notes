@@ -30,10 +30,11 @@ class NoteApiController extends Controller
     public function store()
     {
         try {
-            $note = new Note;
-            $note->title = Request::input('title');
-            $note->description = Request::input('description');
-            $note->save();
+            Note::query()->create([
+                'title' => Request::input('title'),
+                'description' => Request::input('description'),
+                'group_id' => Request::input('group_id'),
+            ]);
 
             return response()->json([
                 'message' => 'Sucesso! Anotação salva.',
@@ -47,7 +48,7 @@ class NoteApiController extends Controller
         }
     }
 
-    public function show($id)
+    public function show(int $id)
     {
         $note = Note::find($id);
 
@@ -59,6 +60,23 @@ class NoteApiController extends Controller
         }
 
         return new NoteResource($note);
+    }
+
+    public function trash()
+    {
+        $per_page = request()->get('per_page');
+        $order = request()->get('order', 'ASC');
+        $column_order = request()->get('column_order', 'id');
+        $query = Note::query()->onlyTrashed()->orderBy($column_order, $order);
+        $paginated = $query->paginate($per_page);
+
+        if (request()->boolean('only_data')) {
+            return response()->json([
+                'data' => NoteResource::collection($paginated->items()),
+            ]);
+        }
+
+        return NoteResource::collection($paginated);
     }
 
     public function search(HttpRequest $request)
