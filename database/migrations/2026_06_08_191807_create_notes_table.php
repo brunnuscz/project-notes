@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('app.notes', function (Blueprint $table) {
             $table->id();
             $table->string('title', 40)->nullable();
-            $table->text('description', 300)->nullable();
+            $table->text('description')->nullable();
+            $table->foreignId('group_id')->nullable()->constrained('app.groups');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
