@@ -18,5 +18,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // quando se precisa executar muitos seed o ideal é adicionar o seed nesse arquivo
+        $this->call([
+            GroupSeeder::class,
+            NoteSeeder::class,
+        ]);
     }
 }

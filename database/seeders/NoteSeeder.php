@@ -10,26 +10,57 @@ class NoteSeeder extends Seeder
     public function run(): void
     {
         DB::table('app.notes')->insert([
-            'title' => 'Alimentos',
-            'description' => 'Arroz, Feijão, Cuscuz e Frango',
+            'title' => 'Carnes',
+            'description' => 'Patinho, Costela, Toscana e Frango',
+            'group_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('app.notes')->insert([
-            'title' => 'Lugares',
-            'description' => 'Florida, New York, Londres e Barcelona',
+            'title' => 'Frutas',
+            'description' => 'Maçã, Laranja, Melancia e Goiaba',
+            'group_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('app.notes')->insert([
+            'title' => 'Brasil',
+            'description' => 'Rio de Janeiro, São Paulo, Maranhão e Ceará',
+            'group_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('app.notes')->insert([
+            'title' => 'Estados Unidos',
+            'description' => 'New York, Los Angeles, Chicago e Seatle',
+            'group_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('app.notes')->insert([
+            'title' => 'Nu Metal',
+            'description' => 'Korn, Slipknot, Link Park e Papa Roach',
+            'group_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('app.notes')->insert([
+            'title' => 'Hard Rock',
+            'description' => 'AC/DC, Aerosmith, Metallica e Bon Jovi',
+            'group_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('app.notes')->insert([
+            'title' => 'Heavy Metal',
+            'description' => 'Black Sabbath, Iron Miaden, Pantela e Angra',
+            'group_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('app.notes')->insert([
             'title' => 'Tecnologias',
             'description' => 'React, Laravel, Node e Java',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('app.notes')->insert([
-            'title' => 'Bandas',
-            'description' => 'Slipknot, Korn, Oasis e Beatles',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
