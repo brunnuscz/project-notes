@@ -24,15 +24,15 @@ class NoteSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('app.notes')->insert([
-            'title' => 'Brasil',
-            'description' => 'Rio de Janeiro, São Paulo, Maranhão e Ceará',
+            'title' => 'Piauí',
+            'description' => 'Teresina, Piripiri, Angical e Oeiras',
             'group_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('app.notes')->insert([
-            'title' => 'Estados Unidos',
-            'description' => 'New York, Los Angeles, Chicago e Seatle',
+            'title' => 'Califórnia',
+            'description' => 'Los Angeles, São Francisco, San Diego e Sacramento',
             'group_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
