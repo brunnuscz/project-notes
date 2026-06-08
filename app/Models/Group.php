@@ -7,21 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 
-class Note extends Model
+class Group extends Model
 {
-    // apenas tem a coluna deleted_at não adianta precisa ter a trait
     use HasApiTokens, HasFactory, SoftDeletes;
 
-    protected $table = 'app.notes';
+    protected $table = 'app.groups';
 
     protected $fillable = [
-        'title',
-        'description',
-        'group_id',
+        'title_group',
     ];
 
-    public function group()
+    public function notes()
     {
-        return $this->belongsTo(Group::class);
+        return $this->belongsToMany(Group::class);
     }
 }
