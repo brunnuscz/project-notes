@@ -5,15 +5,28 @@
   defineOptions({ layout: DefaultLayout })
 
   const props = defineProps({
-    notes: Object
+    notes: Object,
+    groups: Object,
   })
 </script>
 
 <template>
+  <div style="text-align: center; margin-bottom: 20px;" v-if="groups.data && groups.data.length">
+    <span class="pr-3" v-for="group in groups.data" :key="group.id">
+      <v-chip
+        :color="group.color ? group.color : 'default'" 
+        :variant="group.color ? 'flat' : 'outlined'"
+        size="small"
+      >
+        {{ group.title_group }}
+      </v-chip>
+    </span>
+  </div>
+
   <v-table 
     height="580px"
     fixed-header
-    class="rounded-t-xl rounded-b-xl pr-3"
+    class="rounded-t-xl rounded-b-xl pr-8"
     v-if="notes.data && notes.data.length"
   >
     <thead>

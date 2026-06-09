@@ -6,7 +6,7 @@
 
 <template>
   <v-app>
-    <v-main class="bg-custom">
+    <v-main style="background-color: #b5d4e0;">
       <v-container>
         <slot />
       </v-container>

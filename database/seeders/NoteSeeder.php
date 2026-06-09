@@ -65,6 +65,13 @@ class NoteSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('app.notes')->insert([
+            'title' => 'Burger King',
+            'description' => 'Hamburguer, Batata, Coca-Cola e Pizza',
+            'group_id' => 4,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('app.notes')->insert([
             'title' => 'Times',
             'description' => 'Corinthias, Flamengo, Vasco e Bahia',
             'created_at' => now(),
@@ -73,12 +80,6 @@ class NoteSeeder extends Seeder
         DB::table('app.notes')->insert([
             'title' => 'Livros',
             'description' => 'IT, A Cabana, Carie e Estraordinario',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('app.notes')->insert([
-            'title' => 'Lanches',
-            'description' => 'Hamburguer, Batata, Coca-Cola e Pizza',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
