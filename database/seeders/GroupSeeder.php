@@ -31,5 +31,19 @@ class GroupSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        DB::table('app.groups')->insert([
+            'title_group' => 'Lanches',
+            'color' => 'primary',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('app.groups')->insert([
+            'title_group' => 'Lazer',
+            'color' => 'success',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }
