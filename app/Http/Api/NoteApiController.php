@@ -3,6 +3,7 @@
 namespace App\Http\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Group;
 use App\Models\Note;
 use App\Resources\NoteResource;
 use Illuminate\Http\Request as HttpRequest;
@@ -27,6 +28,16 @@ class NoteApiController extends Controller
         return NoteResource::collection($paginated);
     }
 
+    public function stats()
+    {
+        return response()->json([
+            'total_registros' => Note::withTrashed()->count(),
+            'total_registros_ativo' => Note::count(),
+            'total_lixeira' => Note::onlyTrashed()->count(),
+            'total_grupos' => Group::count(),
+        ]);
+    }
+
     public function store()
     {
         try {
@@ -42,7 +53,7 @@ class NoteApiController extends Controller
             ], 201);
         } catch (\Throwable $th) {
             return response()->json([
-                'message' => 'Erro! Anotação não salva.',
+                'message' => 'Erro! Anotação não salva. Motivo: '.$th->getMessage(),
                 'status' => 422,
             ], 422);
         }
@@ -77,6 +88,44 @@ class NoteApiController extends Controller
         }
 
         return NoteResource::collection($paginated);
+    }
+
+
+    public function restore(int $id)
+    {
+        try{
+            $note = Note::withTrashed()->findOrFail($id);
+            $note->restore();
+
+            return response()->json([
+                'message' => 'Sucesso! Anotação restaurada.',
+                'status' => 201,
+            ], 201);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Erro! Anotação não restaurada. Motivo: '.$th->getMessage(),
+                'status' => 422,
+            ], 422);
+        }
+    }
+
+
+    public function force(int $id)
+    {
+        try{
+            $note = Note::withTrashed()->findOrFail($id);
+            $note->forceDelete();   
+
+            return response()->json([
+                'message' => 'Sucesso! Anotação deletada físicamente.',
+                'status' => 201,
+            ], 201);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Erro! Anotação não deletada físicamente. Motivo: '.$th->getMessage(),
+                'status' => 422,
+            ], 422);
+        }
     }
 
     public function search(HttpRequest $request)
