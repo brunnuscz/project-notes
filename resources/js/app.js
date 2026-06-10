@@ -10,6 +10,9 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
+// fontawesome - npm install @fortawesome/fontawesome-free
+import '@fortawesome/fontawesome-free/css/all.css'
+
 const vuetify = createVuetify({
   components,
   directives,

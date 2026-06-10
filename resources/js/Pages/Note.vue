@@ -11,14 +11,22 @@
 </script>
 
 <template>
-  <div style="text-align: center; margin-bottom: 20px;" v-if="groups.data && groups.data.length">
-    <span class="pr-3" v-for="group in groups.data" :key="group.id">
-      <v-chip
+
+  <div 
+    class="rounded-t-xl bg-white text-center pa-2 mx-auto"
+    style="width: 500px;"
+    v-if="groups.data && groups.data.length"
+  >
+    <span 
+      class="pr-2" 
+      v-for="group in groups.data" :key="group.id"
+    >
+      <v-chip 
         :color="group.color ? group.color : 'default'" 
-        :variant="group.color ? 'flat' : 'outlined'"
+        :variant="group.color ? 'flat' : 'outlined'" 
         size="small"
       >
-        {{ group.title_group }}
+        <i v-if="group.icon" :class="[group.icon, 'pr-5']"></i> {{ group.title }}
       </v-chip>
     </span>
   </div>
@@ -50,7 +58,7 @@
             :variant="note.group.color ? 'flat' : 'outlined'"
             size="small"
           >
-            {{ note.group.title_group }}
+            <i v-if="note.group.icon" :class="[note.group.icon, 'pr-5']"></i> {{ note.group.title }}
           </v-chip>
         </td>
         <td class="text-center">{{ String(note.id).padStart(3, '0') }}</td>
