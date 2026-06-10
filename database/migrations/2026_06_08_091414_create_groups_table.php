@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('app.groups', function (Blueprint $table) {
             $table->id();
-            $table->string('title_group', 40)->nullable();
+            $table->string('title', 40)->nullable();
             $table->string('color', 20)->nullable();
+            $table->string('icon', 50)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

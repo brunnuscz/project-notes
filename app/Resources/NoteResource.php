@@ -15,8 +15,9 @@ class NoteResource extends JsonResource
             'title' => $this->title,
             'group' => [
                 'id' => $this->group?->id,
-                'title_group' => $this->group?->title_group,
+                'title' => $this->group?->title,
                 'color' => $this->group?->color,
+                'icon' => $this->group?->icon,
             ],
             'description' => $this->description,
             'created_at' => $this->created_at,

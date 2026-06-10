@@ -14,7 +14,7 @@ class Group extends Model
     protected $table = 'app.groups';
 
     protected $fillable = [
-        'title_group',
+        'title',
     ];
 
     public function notes()

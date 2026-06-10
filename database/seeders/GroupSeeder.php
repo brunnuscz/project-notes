@@ -13,35 +13,39 @@ class GroupSeeder extends Seeder
     public function run(): void
     {
         DB::table('app.groups')->insert([
-            'title_group' => 'Feira',
+            'title' => 'Feira',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('app.groups')->insert([
-            'title_group' => 'Viagem',
+            'title' => 'Viagem',
             'color' => 'warning',
+            'icon' => 'fa-solid fa-plane',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('app.groups')->insert([
-            'title_group' => 'Bandas',
+            'title' => 'Música',
             'color' => 'red',
+            'icon' => 'fa-solid fa-music',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('app.groups')->insert([
-            'title_group' => 'Lanches',
+            'title' => 'Lanche',
             'color' => 'primary',
+            'icon' => 'fa-solid fa-burger',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('app.groups')->insert([
-            'title_group' => 'Lazer',
+            'title' => 'Lazer',
             'color' => 'success',
+            'icon' => 'fa-solid fa-champagne-glasses',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
