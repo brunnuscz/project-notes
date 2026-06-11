@@ -1,66 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📝 Notes API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Projeto de estudos criado com Laravel, Vue 3, Vuetify e Inertia.js para gerenciamento de anotações e grupos. A proposta deste projeto é praticar conceitos de desenvolvimento Full Stack, criação e consumo de APIs REST, integração entre Laravel e Vue.js, paginação, filtros, Soft Delete, relacionamentos entre entidades e boas práticas de organização de código.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tecnologias e Recursos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+PHP 8.3+ • Laravel 10 • PostgreSQL 15 • Nginx • Docker • Vue.js 3 • Vuetify 3 • Inertia.js • Vite • Axios • Day.js • Font Awesome
 
-## Learning Laravel
+### Conceitos Praticados
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+APIs REST • CRUD Completo • Soft Delete • API Resources • Laravel Actions • Relacionamentos Eloquent • Paginação • Filtros de Pesquisa • SPA com Vue.js + Inertia.js
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🖥️ Tela de Anotações Web
 
-## Laravel Sponsors
+<img src="public/docs/screenshots/notes-web.png" width="100%">
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🔗 Endpoints da API
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+| Método | Endpoint | Descrição |
+|----------|----------|----------|
+| GET | `/api/notes` | Lista todas as anotações |
+| GET | `/api/notes/{id}` | Retorna uma anotação |
+| GET | `/api/notes/search` | Pesquisa anotações |
+| POST | `/api/notes` | Cria uma anotação |
+| PUT | `/api/notes/{id}` | Atualiza uma anotação |
+| DELETE | `/api/notes/{id}` | Exclui uma anotação (Soft Delete) |
+| GET | `/api/notes/trash` | Lista anotações excluídas |
+| POST | `/api/notes/{id}/restore` | Restaura anotação excluída |
+| DELETE | `/api/notes/{id}/force` | Remove permanentemente |
+| DELETE | `/api/notes` | Remove múltiplas anotações |
+| GET | `/api/notes/stats` | Retorna estatísticas |
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📡 Exemplos de Uso da API
 
-## Code of Conduct
+### Listagem de Anotações
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<img src="public/docs/screenshots/insomnia-note-list.png" width="100%">
 
-## Security Vulnerabilities
+### Buscar Anotação por ID
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<img src="public/docs/screenshots/insomnia-note-specific.png" width="100%">
 
-## License
+### Buscar Anotações
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<img src="public/docs/screenshots/insomnia-note-search.png" width="100%">
+
+### Criar Anotação
+
+<img src="public/docs/screenshots/insomnia-note-create.png" width="100%">
+
+### Atualizar Anotação
+
+<img src="public/docs/screenshots/insomnia-note-update.png" width="100%">
+
+### Excluir Anotação (Soft Delete)
+
+<img src="public/docs/screenshots/insomnia-note-delete.png" width="100%">
+
+### Listar Anotações Excluídas
+
+<img src="public/docs/screenshots/insomnia-note-trash.png" width="100%">
+
+### Restaurar Anotação
+
+<img src="public/docs/screenshots/insomnia-note-restore.png" width="100%">
+
+### Excluir Permanentemente
+
+<img src="public/docs/screenshots/insomnia-note-delete-permanent.png" width="100%">
+
+### Excluir Múltiplas Anotações
+
+<img src="public/docs/screenshots/insomnia-note-delete-multiple.png" width="100%">
+
+### Estatísticas
+
+<img src="public/docs/screenshots/insomnia-note-stats.png" width="100%">
+
+---
+
+## ⚙️ Instalação
+
+```bash
+# Clone o projeto
+git clone <url-do-repositorio>
+
+# Entre na pasta
+cd project-notes
+
+# Instale as dependências do Laravel
+composer install
+
+# Copie o arquivo de ambiente
+cp .env.example .env
+
+# Gere a chave da aplicação
+php artisan key:generate
+
+# Execute as migrations e seeders
+php artisan migrate --seed
+
+# Instale as dependências do Front-end
+npm install
+
+# Inicie o ambiente de desenvolvimento
+npm run dev
+
+# Gerar build de produção
+npm run build
