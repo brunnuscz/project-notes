@@ -10,4 +10,13 @@ export default defineConfig({
     }),
     vue(),
   ],
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    hmr: {
+      host: 'note.localhost',
+      port: 5173
+    },
+  },
 })

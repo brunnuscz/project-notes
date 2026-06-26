@@ -15,6 +15,33 @@ PHP 8.3+ • Laravel 10 • PostgreSQL 15 • Nginx • Docker • Vue.js 3 • 
 APIs REST • CRUD Completo • Soft Delete • API Resources • Laravel Actions • Relacionamentos Eloquent • Paginação • Filtros de Pesquisa • SPA com Vue.js + Inertia.js
 
 ---
+## 🐳 Arquidetura Docker
+
+```bash
+├── docker/
+│   └── nginx/
+│       └── default.conf        # Configuração do servidor web (Nginx)
+├── docker-compose.yml          # Orquestração dos containers
+├── Dockerfile                  # Build do container PHP (Laravel)
+│
+│ # arquivo docker-compose.yml
+├── note_app                    # Container PHP (Laravel Runtime)
+│   ├── PHP 8.3
+│   └── Composer
+│
+├── note_node                   # Container Frontend
+│   ├── Node.js                 # Runtime JavaScript
+│   ├── npm                     # Gerenciador de pacotes
+│   └── Vite                    # Dev server + build assets (Vue/Inertia)
+│
+├── note_nginx                  # Servidor Web
+│   └── Nginx (reverse proxy)
+│
+│ # projeto apenas pro banco
+└── docker_data/
+    └── postgres/               # Volume do banco de dados
+```
+---
 
 ## 🖥️ Tela de Anotações Web
 
