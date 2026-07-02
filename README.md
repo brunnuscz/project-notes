@@ -8,14 +8,14 @@ Projeto de estudos criado com Laravel, Vue 3, Vuetify e Inertia.js para gerencia
 
 ### Stack
 
-PHP 8.3+ • Laravel 10 • PostgreSQL 15 • Nginx • Docker • Vue.js 3 • Vuetify 3 • Inertia.js • Vite • Axios • Day.js • Font Awesome
+PHP 8.3+ • Laravel 10 • PostgreSQL 15 • Nginx • Docker • Vue.js 3 • Node.js • Npm • Composer • Vuetify 3 • Inertia.js • Vite • Axios • Font Awesome
 
 ### Conceitos Praticados
 
 APIs REST • CRUD Completo • Soft Delete • API Resources • Laravel Actions • Relacionamentos Eloquent • Paginação • Filtros de Pesquisa • SPA com Vue.js + Inertia.js
 
 ---
-## 🐳 Arquidetura Docker
+## 🐳 Arquitetura Docker
 
 ```bash
 ├── docker/
