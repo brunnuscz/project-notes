@@ -25,14 +25,14 @@ APIs REST • CRUD Completo • Soft Delete • API Resources • Laravel Action
 ├── Dockerfile                  # Build do container PHP (Laravel)
 
 # arquivo docker-compose.yml
-├── note_app                    # Container PHP (Laravel Runtime)
+├── note_app                    # Container principal da aplicação
 │   ├── PHP 8.3                 # Runtime da aplicação Laravel
 │   ├── Composer                # Gerenciador de dependências PHP
 │   ├── Node.js                 # Runtime JavaScript
 │   ├── Npm                     # Gerenciador de pacotes
 │   └── Vite                    # Dev server + build assets (Vue/Inertia)
 │
-├── note_nginx                  # Servidor Web
+├── note_nginx                  # Container servidor Web
 │   └── Nginx
 
 # projeto apenas pro banco
