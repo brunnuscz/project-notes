@@ -23,21 +23,19 @@ APIs REST • CRUD Completo • Soft Delete • API Resources • Laravel Action
 │       └── default.conf        # Configuração do servidor web (Nginx)
 ├── docker-compose.yml          # Orquestração dos containers
 ├── Dockerfile                  # Build do container PHP (Laravel)
-│
-│ # arquivo docker-compose.yml
+
+# arquivo docker-compose.yml
 ├── note_app                    # Container PHP (Laravel Runtime)
-│   ├── PHP 8.3
-│   └── Composer
-│
-├── note_node                   # Container Frontend
+│   ├── PHP 8.3                 # Runtime da aplicação Laravel
+│   ├── Composer                # Gerenciador de dependências PHP
 │   ├── Node.js                 # Runtime JavaScript
-│   ├── npm                     # Gerenciador de pacotes
+│   ├── Npm                     # Gerenciador de pacotes
 │   └── Vite                    # Dev server + build assets (Vue/Inertia)
 │
 ├── note_nginx                  # Servidor Web
-│   └── Nginx (reverse proxy)
-│
-│ # projeto apenas pro banco
+│   └── Nginx
+
+# projeto apenas pro banco
 └── docker_data/
     └── postgres/               # Volume do banco de dados
 ```

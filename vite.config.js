@@ -15,8 +15,8 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     hmr: {
-      host: 'note.localhost',
-      port: 5173
+      host: 'localhost',
+      port: 5173,
     },
   },
 })
